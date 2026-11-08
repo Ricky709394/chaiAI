@@ -889,7 +889,7 @@ section[id]{scroll-margin-top:var(--nav-h)}
   });
   function syncActive() {
     if (!sections.length) return;
-    var marker = window.innerHeight * 0.3;
+    var marker = Math.min(window.innerHeight * 0.3, 300);
     var current = null;
     sections.forEach(function (s) {
       if (s.el.getBoundingClientRect().top <= marker) current = s;
